@@ -13,20 +13,30 @@ const button = document.getElementById('button')
 function handleState(state) {
     switch (state) {
         case 'refresh':
-            console.log('refresh')
+            handleLanguage()
             break
         case 'retry':
-            console.log('retry')
+            handleLanguage()
             break
         case 'empty':
+            description.style.fontWeight = 'bold'
+            nameRepo.textContent = ''
+            values.style.display = 'none'
+            container.style.borderColor = ' transparent'
             container.style.background = ' #eaeded'
             description.textContent = 'Plase select a language'
+            button.style.display = 'none'
             break
         case 'loading':
+            description.style.fontWeight = 'bold'
+            nameRepo.textContent = ''
+            values.style.display = 'none'
+            container.style.borderColor = ' transparent'
             container.style.background = ' #eaeded'
             description.textContent = 'Loading, plase wait...'
             break
         case 'success':
+            description.style.fontWeight = 'normal'
             values.style.display = 'flex' 
             container.style.borderColor = ' #000'
             container.style.background = ' #fff'
@@ -37,12 +47,13 @@ function handleState(state) {
             button.style.color = ' #fff'
             break
         case 'error':
+            description.style.fontWeight = 'bold'
             container.style.borderColor = 'transparent'
             container.style.background = ' #f5b7b1'
             description.textContent = 'Error fetching repositories'
             button.textContent = 'Click to retry'
             button.value = 'retry'
-            // button.style.display = 'block'
+            button.style.display = 'block'
             button.style.background = ' #CD5C5C'
             button.style.color = ' #fdedec'
             break
@@ -82,6 +93,7 @@ function formatNumber(num) {
 }
 
 function handleRepositories(language) {
+    // console.log(language)
     const repositories = fetch(`https://api.github.com/search/repositories?q=language:${language}`)
         .then(reponse => reponse.json())
         .then(data => {
@@ -117,10 +129,10 @@ function handleLanguage() {
 }
 
 values.style.display = 'none'
-
+handleLanguage('empty')
 selectLanguage.addEventListener('change', handleLanguage)
 
 
-/* button.addEventListener('click', () => {
+button.addEventListener('click', () => {
     handleState(button.value)
-}) */
+})
