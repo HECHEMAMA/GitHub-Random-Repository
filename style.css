@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    
+    font-family: Roboto, sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+fieldset{
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 20px;
+
+    border: 1px solid transparent;
+    position: relative;
+
+    width: 400px;
+    padding: 20px 30px;
+}
+legend{
+    font-weight: bold;
+}
+
+.mode {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0px;
+    bottom: 110%;
+    padding: 2px;
+
+    border-radius: 100%;
+    border-top: 2px solid transparent;    
+}
+
+select{
+    width: 100%;
+    cursor: pointer;
+    padding: 10px;
+    background: #fff;
+    border-radius: 12px;
+    border: 3px solid #000;
+    outline: none;
+}
+
+option{
+    cursor: pointer;
+}
+
+#repository{
+    border-radius: 12px;
+    border: 3px solid transparent;
+    font-size: small;
+    width: 100%;
+    min-height: 120px;
+    height: auto;
+    padding: 20px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    row-gap: 10px;
+}
+
+#repository header {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#repository p {
+    width: 100%;
+    font-size: 14px;
+    color: #000000e1;
+}
+
+#repository div {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    column-gap: 30px;
+}
+
+#repository span {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #566573;
+}
+
+small {
+    font-size: 10px;
+}
+
+#language div {
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    background-color: lightcoral;
+}
+
+img {
+    width: 16px;
+    height: 16px;
+}
+
+button{
+    display: none;
+    text-align: center;
+    cursor: pointer;
+
+    font-weight: bold;
+    color: #fff;
+    background: #000;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 10px;
+}
